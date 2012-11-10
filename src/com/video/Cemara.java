@@ -53,8 +53,11 @@ public class Cemara extends Activity implements SurfaceHolder.Callback{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cemara);
 		
+		//create file in cache or in external storage  
+		FileCache();
+
 		prRecordInProcess = false;
-		cVideoFilePath = android.os.Environment.getExternalStorageDirectory()+"/"+getString(R.string.app_name)+"/";
+		cVideoFilePath = android.os.Environment.getExternalStorageDirectory()+"/VRP/";
 	
 		prSurfaceView = (SurfaceView) findViewById(R.id.surfaceView1);
 		timeElapsed1 = (TextView) findViewById(R.id.timeElapsed);
@@ -67,6 +70,24 @@ public class Cemara extends Activity implements SurfaceHolder.Callback{
 		recordtogglebutton.setOnCheckedChangeListener(checkedchangelistener);
 	}
 
+	private File cacheDir;
+    private void FileCache(){
+        //Find the dir to save cached images
+        if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
+            cacheDir=new File(android.os.Environment.getExternalStorageDirectory(),"VRP");
+        else
+            cacheDir=this.getCacheDir();
+        
+        if(!cacheDir.exists())
+            cacheDir.mkdirs();
+        
+        File card_folder = new File(cacheDir,"cards");
+        if(!card_folder.exists())
+        	card_folder.mkdirs();
+    }
+
+	
+	
 	
 	private OnCheckedChangeListener checkedchangelistener =  new OnCheckedChangeListener(){
 

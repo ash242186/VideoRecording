@@ -58,7 +58,7 @@ public class PlayVideo extends Activity implements OnPreparedListener{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(PlayVideo.this, "Start uplaoding........... ", Toast.LENGTH_SHORT).show();
+				Toast.makeText(PlayVideo.this, "write a code for upload file to server \nStart uplaoding........... ", Toast.LENGTH_SHORT).show();
 			}
 		});
 		
