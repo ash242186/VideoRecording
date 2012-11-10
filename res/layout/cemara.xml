@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	
+		<RelativeLayout android:layout_width="match_parent"
+			android:id="@+id/relativeLayout1" android:layout_height="wrap_content">
+			<SurfaceView android:id="@+id/surfaceView1"
+				android:layout_alignParentTop="true" android:layout_width="wrap_content"
+				android:layout_height="wrap_content"></SurfaceView>
+			<LinearLayout android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true" android:id="@+id/linearLayout1"
+				android:gravity="center_vertical" android:layout_width="match_parent">
+				<TextView android:textColor="#007af0" android:textSize="16sp"
+					android:typeface="normal" android:textStyle="bold"
+					android:layout_height="wrap_content" android:id="@+id/timeElapsed"
+					android:text="--:--" android:layout_width="wrap_content"
+					android:layout_weight="1"></TextView>
+				<ToggleButton android:layout_height="wrap_content"
+					android:text="ToggleButton" android:background="@drawable/recordtoggle"
+					android:layout_width="wrap_content" android:textOff=""
+					android:textOn="" android:id="@+id/recordtogglebutton"></ToggleButton>
+			</LinearLayout>
+		</RelativeLayout>
+
+
+
+</LinearLayout>
